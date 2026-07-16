@@ -54,6 +54,8 @@ const routes = {
 };
 
 const tabs = [...document.querySelectorAll(".route-tab")];
+const views = [...document.querySelectorAll(".page-view")];
+const viewTriggers = [...document.querySelectorAll("[data-view-target]")];
 const hall = document.querySelector("#routeHall");
 const title = document.querySelector("#routeTitle");
 const description = document.querySelector("#routeDescription");
@@ -63,6 +65,28 @@ const stops = document.querySelector("#routeStops");
 const copyButton = document.querySelector("#copyRoute");
 const toast = document.querySelector("#toast");
 let activeRoute = "agent";
+
+function showView(name, updateHash = true) {
+  views.forEach((view) => {
+    const active = view.dataset.view === name;
+    view.hidden = !active;
+    view.classList.toggle("active", active);
+  });
+
+  document.body.classList.toggle("view-open", name !== "home");
+  window.scrollTo({ top: 0, behavior: "auto" });
+
+  if (updateHash) {
+    const hash = name === "home" ? "" : `#${name}`;
+    history.replaceState(null, "", `${location.pathname}${location.search}${hash}`);
+  }
+}
+
+viewTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    showView(trigger.dataset.viewTarget);
+  });
+});
 
 function renderRoute(key) {
   const route = routes[key];
@@ -115,3 +139,10 @@ copyButton.addEventListener("click", async () => {
     window.prompt("复制这条路线", text);
   }
 });
+
+const initialView = location.hash === "#routes"
+  ? "routes"
+  : location.hash === "#community"
+    ? "community"
+    : "home";
+showView(initialView, false);
