@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f1">
+  <meta name="description" content="Chance AI WAIC 2026 看展搭子：展馆导航、重点路线、一键记录与看展群。">
+  <meta property="og:title" content="WAIC 2026 看展搭子">
+  <meta property="og:description" content="路线、重点展商、一键记录和看展群，一个页面搞定。">
+  <meta property="og:image" content="assets/booth-before.jpg">
+  <title>WAIC 2026 看展搭子 · Chance AI</title>
+  <link rel="icon" href="assets/chance-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <img src="assets/chance-logo.png" alt="Chance AI">
+      <span>Chance AI</span>
+      <i></i>
+      <strong>WAIC 看展搭子</strong>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#routes">路线</a>
+      <a href="#venues">场馆</a>
+      <a href="#record">一键记录</a>
+      <a href="#community">进群</a>
+    </nav>
+    <a class="header-action" href="https://www.chance.vision/" target="_blank" rel="noreferrer">打开 Chance AI <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WAIC 2026 · 07.17—20 · 上海</p>
+        <h1>你的 WAIC<br>看展搭子</h1>
+        <p class="hero-lead">先选路线，再去现场。看到感兴趣的展位，拍一下，Chance AI 帮你认展商、抓重点、生成看展笔记。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#routes">选一条路线 <span>↓</span></a>
+          <a class="button secondary" href="https://waic2026-map-daidai.netlify.app/" target="_blank" rel="noreferrer">打开完整展位地图 <span>↗</span></a>
+        </div>
+        <div class="quick-links" aria-label="快速入口">
+          <a href="https://www.worldaic.com.cn/exhibitors" target="_blank" rel="noreferrer"><small>官方</small><span>查展商</span></a>
+          <a href="#venues"><small>3 大片区</small><span>看场馆</span></a>
+          <a href="#record"><small>一张照片</small><span>自动整理</span></a>
+          <a href="#community"><small>现场互助</small><span>找搭子</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Chance AI 看展记录演示">
+        <figure class="hero-photo">
+          <img src="assets/booth-before.jpg" alt="WAIC 展位现场照片">
+          <figcaption><span>01</span>现场随手拍</figcaption>
+        </figure>
+        <figure class="hero-phone">
+          <img src="assets/chance-report.jpg" alt="Chance AI 自动生成的展商分析报告">
+          <figcaption><span>02</span>自动生成看展笔记</figcaption>
+        </figure>
+        <div class="hero-stamp">SNAP<br>TO KNOW</div>
+      </div>
+    </section>
+
+    <section class="numbers" aria-label="WAIC 2026 数据概况">
+      <div><strong>1,100+</strong><span>参展企业</span></div>
+      <div><strong>3,000+</strong><span>技术与展品</span></div>
+      <div><strong>300+</strong><span>全球首发新品</span></div>
+      <div><strong>100,000㎡</strong><span>展览面积</span></div>
+    </section>
+
+    <section class="section routes-section" id="routes">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">CHOOSE YOUR ROUTE</p>
+          <h2>今天想看什么？</h2>
+        </div>
+        <p>别试图一天看完。选一条主线，再留 30% 时间给现场偶遇。</p>
+      </header>
+
+      <div class="route-tabs" role="tablist" aria-label="选择看展路线">
+        <button class="route-tab active" type="button" role="tab" aria-selected="true" data-route="agent">Agent & 应用</button>
+        <button class="route-tab" type="button" role="tab" aria-selected="false" data-route="hardtech">算力 & 硬科技</button>
+        <button class="route-tab" type="button" role="tab" aria-selected="false" data-route="robot">机器人暴走</button>
+        <button class="route-tab" type="button" role="tab" aria-selected="false" data-route="startup">初创雷达</button>
+      </div>
+
+      <article class="route-panel" id="routePanel" aria-live="polite">
+        <div class="route-summary">
+          <span class="route-hall" id="routeHall">H1 · 应用与生态馆</span>
+          <h3 id="routeTitle">看 AI 怎么真正进入产品</h3>
+          <p id="routeDescription">适合产品、增长、Agent 和消费应用从业者。重点看大模型、智能终端与真实使用场景。</p>
+          <div class="route-meta">
+            <span id="routeDuration">建议 2.5 小时</span>
+            <span id="routeAudience">产品 / Agent / 消费应用</span>
+          </div>
+          <div class="route-actions">
+            <button class="button primary compact" id="copyRoute" type="button">复制路线</button>
+            <a class="button secondary compact" href="https://waic2026-map-daidai.netlify.app/" target="_blank" rel="noreferrer">去地图找展位 ↗</a>
+          </div>
+        </div>
+        <ol class="route-stops" id="routeStops">
+          <li><span>01</span><div><strong>阶跃星辰</strong><small>H1-C107 · 多模态与 AI 终端</small></div></li>
+          <li><span>02</span><div><strong>MiniMax</strong><small>H1-A801 · 通用大模型与 Agent</small></div></li>
+          <li><span>03</span><div><strong>阿里巴巴</strong><small>H1-C101 · 千问、AI 眼镜与智能终端</small></div></li>
+          <li><span>04</span><div><strong>Chance AI</strong><small>H4-FT A012 · 视觉理解现场挑战</small></div></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="section venues-section" id="venues">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">VENUE CHEAT SHEET</p>
+          <h2>先认清场馆</h2>
+        </div>
+        <p>世博展览馆与世博中心可以步行切换；西岸和张江不要临时起意，提前留交通时间。</p>
+      </header>
+
+      <div class="hall-grid">
+        <article class="hall-item accent-blue">
+          <div class="hall-code">H1</div>
+          <div>
+            <h3>应用与生态馆</h3>
+            <p>大模型、Agent、企业服务、智能终端与行业应用。最适合快速找产品灵感。</p>
+            <span>推荐：阶跃星辰 · MiniMax · 阿里巴巴 · 西门子</span>
+          </div>
+        </article>
+        <article class="hall-item accent-orange">
+          <div class="hall-code">H2</div>
+          <div>
+            <h3>算力与硬科技馆</h3>
+            <p>芯片、算力基础设施、通信、能源与核心技术。适合技术和产业链从业者。</p>
+            <span>推荐：中国电信 · 燧原科技 · 新华三 · 中兴通讯</span>
+          </div>
+        </article>
+        <article class="hall-item accent-green">
+          <div class="hall-code">H3</div>
+          <div>
+            <h3>机器人馆</h3>
+            <p>具身智能、机器人本体、零部件与工业应用。现场演示密度最高，也最容易拥堵。</p>
+            <span>推荐：智元 · 傅利叶 · 银河通用 · 宇树科技</span>
+          </div>
+        </article>
+        <article class="hall-item accent-black">
+          <div class="hall-code">H4</div>
+          <div>
+            <h3>全域链接馆</h3>
+            <p>Future Tech、初创项目、OPC、投资人与开发者。想找新东西和聊合作，优先来这里。</p>
+            <span>158 家初创 · 22 个 OPC 项目 · Chance AI H4-FT A012</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="venue-strip">
+        <article>
+          <span>01</span>
+          <h3>世博片区</h3>
+          <p>世博展览馆 H1–H4 + 世博中心。主展和论坛最集中。</p>
+          <small>展览馆 ↔ 世博中心步行约 10–15 分钟</small>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>徐汇西岸</h3>
+          <p>国际会展中心及部分学术、产业活动，和世博隔江相望。</p>
+          <small>建议地铁或大会接驳车，不要按步行规划</small>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>张江片区</h3>
+          <p>张江科学会堂，偏技术、学术和产业深度交流。</p>
+          <small>适合单独安排半天，不建议与世博来回穿插</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="record-section" id="record">
+      <div class="record-copy">
+        <p class="eyebrow">ONE SNAP, FULL CONTEXT</p>
+        <h2>照片拍了一堆，<br>回去却什么都想不起来？</h2>
+        <p>展商是谁、产品解决什么问题、团队做过什么，Chance AI 可以从现场照片里直接提取并整理。你负责逛，它负责记。</p>
+        <ol>
+          <li><span>01</span><strong>拍下展位或展板</strong></li>
+          <li><span>02</span><strong>自动识别展商与产品</strong></li>
+          <li><span>03</span><strong>生成可分享的结构化笔记</strong></li>
+        </ol>
+        <div class="store-actions">
+          <a class="button primary" href="https://apps.apple.com/us/app/chance-ai-ask-photo-ai/id6695741291" target="_blank" rel="noreferrer">iPhone 下载 ↗</a>
+          <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.chancevisionai.app" target="_blank" rel="noreferrer">Android 下载 ↗</a>
+        </div>
+      </div>
+      <div class="record-demo">
+        <div class="demo-before">
+          <span>BEFORE</span>
+          <img src="assets/booth-before.jpg" alt="未整理的展位照片">
+          <strong>一张展位照片</strong>
+        </div>
+        <div class="demo-arrow" aria-hidden="true">→</div>
+        <div class="demo-after">
+          <span>AFTER</span>
+          <img src="assets/chance-report.jpg" alt="Chance AI 生成的结构化展商信息">
+          <strong>一份看展笔记</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolkit-section">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">FIELD TOOLKIT</p>
+          <h2>出发前收藏</h2>
+        </div>
+      </header>
+      <div class="tool-list">
+        <a href="https://waic2026-map-daidai.netlify.app/" target="_blank" rel="noreferrer">
+          <span>展位地图</span><strong>搜索 1000+ 展商与展位</strong><i>↗</i>
+        </a>
+        <a href="https://www.worldaic.com.cn/exhibitors" target="_blank" rel="noreferrer">
+          <span>官方展商</span><strong>核对企业、身份与服务领域</strong><i>↗</i>
+        </a>
+        <a href="https://waica2026.worldaic.com.cn/participant-guide/" target="_blank" rel="noreferrer">
+          <span>学术日程</span><strong>查看 WAICA 场次与会场</strong><i>↗</i>
+        </a>
+        <a href="https://www.chance.vision/" target="_blank" rel="noreferrer">
+          <span>一键记录</span><strong>现场拍照生成看展笔记</strong><i>↗</i>
+        </a>
+      </div>
+    </section>
+
+    <section class="community-section" id="community">
+      <div class="community-copy">
+        <p class="eyebrow">FIND YOUR WAIC BUDDY</p>
+        <h2>一个人逛不完，<br>进群交换现场情报</h2>
+        <p>约搭子、问路线、交换展位线索和现场发现。二维码目前标注有效至 7 月 23 日，长按图片即可识别。</p>
+        <a class="button primary" href="assets/community-qr.jpg" target="_blank">打开大图识别二维码 ↗</a>
+      </div>
+      <figure class="qr-frame">
+        <img src="assets/community-qr.jpg" alt="WAIC 2026 AI 看展搭子群二维码">
+        <figcaption>
+          <strong>WAIC 2026 AI 看展搭子</strong>
+          <span>长按识别 · 现场互助</span>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="assets/chance-logo.png" alt="">
+      <strong>Chance AI × WAIC 2026</strong>
+    </div>
+    <p>非官方看展整理。展位、日程及交通信息可能临时调整，请以 WAIC 官方信息和现场指引为准。</p>
+    <div class="source-links">
+      <a href="https://www.worldaic.com.cn/exhibitors" target="_blank" rel="noreferrer">WAIC 官方展商列表</a>
+      <a href="https://waic2026-map-daidai.netlify.app/" target="_blank" rel="noreferrer">袋袋 WAIC 逛展指南</a>
+      <a href="https://english.shanghai.gov.cn/en-Events/20260624/9cc202d708504b56ba32f70fbd61ef79.html" target="_blank" rel="noreferrer">上海市政府大会信息</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="#routes">选路线</a>
+    <a href="#community">找搭子</a>
+    <a class="mobile-primary" href="https://www.chance.vision/" target="_blank" rel="noreferrer">一键记录</a>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
