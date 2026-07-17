@@ -18,21 +18,51 @@
       <img src="assets/chance-logo.png" alt="">
       <span>Chance AI</span>
       <i></i>
-      <strong>WAIC 一键看展</strong>
+      <strong>WAIC 看展搭子</strong>
     </button>
-    <nav aria-label="页面导航">
-      <button type="button" data-view-target="home">一键看展</button>
-      <button type="button" data-view-target="routes">选路线</button>
-      <button type="button" data-view-target="community">找搭子</button>
+    <nav class="desktop-nav" aria-label="页面导航">
+      <a href="#routes">路线</a>
+      <a href="#venues">场馆</a>
+      <a href="#record">一键记录</a>
+      <a href="#community">进群</a>
     </nav>
     <div class="header-actions">
-      <a href="https://go.chance.vision/8bfE/waic-web" target="_blank" rel="noreferrer">Web 版体验</a>
-      <a class="header-primary" href="https://go.chance.vision/8bfE/waic-app" target="_blank" rel="noreferrer">App 下载</a>
+      <a class="header-primary" href="https://go.chance.vision/8bfE/waic-app" target="_blank" rel="noreferrer">打开 Chance AI ↗</a>
     </div>
   </header>
 
   <main>
     <section class="page-view home-view active" data-view="home" aria-label="一键看展主页">
+      <section class="desktop-hero" id="top">
+        <div class="desktop-hero-copy">
+          <p class="eyebrow">WAIC 2026 · 07.17—20 · 上海</p>
+          <h1>你的 WAIC<br>看展搭子</h1>
+          <p class="desktop-hero-lead">先选路线，再去现场。看到感兴趣的展位，拍一下，Chance AI 帮你认展商、抓重点、生成看展笔记。</p>
+          <div class="desktop-hero-actions">
+            <a class="button primary" href="#routes">选一条路线 <span>↓</span></a>
+            <a class="button secondary" href="https://waic2026-map-daidai.netlify.app/" target="_blank" rel="noreferrer">打开完整展位地图 <span>↗</span></a>
+          </div>
+          <div class="desktop-quick-links" aria-label="快速入口">
+            <a href="https://www.worldaic.com.cn/exhibitors" target="_blank" rel="noreferrer"><small>官方</small><span>查展商</span></a>
+            <a href="#venues"><small>3 大片区</small><span>看场馆</span></a>
+            <a href="#record"><small>一张照片</small><span>自动整理</span></a>
+            <a href="#community"><small>现场互助</small><span>找搭子</span></a>
+          </div>
+        </div>
+
+        <div class="desktop-hero-visual" aria-label="Chance AI 看展记录演示">
+          <figure class="desktop-hero-photo">
+            <img src="assets/booth-before.jpg" alt="WAIC 展位现场照片">
+            <figcaption><span>01</span>现场随手拍</figcaption>
+          </figure>
+          <figure class="desktop-hero-phone">
+            <img src="assets/chance-report.jpg" alt="Chance AI 自动生成的展商分析报告">
+            <figcaption><span>02</span>自动生成看展笔记</figcaption>
+          </figure>
+          <a class="desktop-hero-stamp" href="https://go.chance.vision/8bfE/waic-web" target="_blank" rel="noreferrer" aria-label="打开 Chance AI Web 版体验">SNAP<br>TO KNOW</a>
+        </div>
+      </section>
+
       <section class="home-hero">
         <div class="home-copy">
           <p class="eyebrow">WAIC 2026 · CHANCE AI VISUAL GUIDE</p>
@@ -108,7 +138,7 @@
       </section>
     </section>
 
-    <section class="page-view routes-view" data-view="routes" hidden aria-label="选路线">
+    <section class="page-view routes-view" data-view="routes" aria-label="选路线" id="routes">
       <header class="subpage-head">
         <button class="back-button" type="button" data-view-target="home">← 返回一键看展</button>
         <p class="eyebrow">WAIC FIELD GUIDE</p>
@@ -162,7 +192,7 @@
         </article>
       </section>
 
-      <section class="section venues-section">
+      <section class="section venues-section" id="venues">
         <header class="section-head">
           <div>
             <p class="eyebrow">VENUE CHEAT SHEET</p>
@@ -225,6 +255,36 @@
         </div>
       </section>
 
+      <section class="desktop-record" id="record">
+        <div class="desktop-record-copy">
+          <p class="eyebrow">ONE SNAP, FULL CONTEXT</p>
+          <h2>照片拍了一堆，<br>回去却什么都想不起来？</h2>
+          <p>展商是谁、产品解决什么问题、团队做过什么，Chance AI 可以从现场照片里直接提取并整理。你负责逛，它负责记。</p>
+          <ol>
+            <li><span>01</span><strong>拍下展位或展板</strong></li>
+            <li><span>02</span><strong>自动识别展商与产品</strong></li>
+            <li><span>03</span><strong>生成可分享的结构化笔记</strong></li>
+          </ol>
+          <div class="desktop-store-actions">
+            <a class="button primary" href="https://go.chance.vision/8bfE/waic-web" target="_blank" rel="noreferrer">Web 版体验 ↗</a>
+            <a class="button secondary" href="https://go.chance.vision/8bfE/waic-app" target="_blank" rel="noreferrer">App 下载 ↗</a>
+          </div>
+        </div>
+        <div class="desktop-record-demo">
+          <div class="desktop-demo-before">
+            <span>BEFORE</span>
+            <img src="assets/booth-before.jpg" alt="未整理的展位照片">
+            <strong>一张展位照片</strong>
+          </div>
+          <div class="desktop-demo-arrow" aria-hidden="true">→</div>
+          <div class="desktop-demo-after">
+            <span>AFTER</span>
+            <img src="assets/chance-report.jpg" alt="Chance AI 生成的结构化展商信息">
+            <strong>一份看展笔记</strong>
+          </div>
+        </div>
+      </section>
+
       <section class="toolkit-section">
         <header class="section-head">
           <div><p class="eyebrow">FIELD TOOLKIT</p><h2>实用入口</h2></div>
@@ -246,7 +306,7 @@
       </section>
     </section>
 
-    <section class="page-view community-view" data-view="community" hidden aria-label="找搭子">
+    <section class="page-view community-view" data-view="community" aria-label="找搭子" id="community">
       <div class="community-page">
         <div class="community-copy">
           <button class="back-button light" type="button" data-view-target="home">← 返回一键看展</button>
