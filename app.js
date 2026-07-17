@@ -65,6 +65,7 @@ const stops = document.querySelector("#routeStops");
 const copyButton = document.querySelector("#copyRoute");
 const toast = document.querySelector("#toast");
 let activeRoute = "agent";
+const mobileQuery = window.matchMedia("(max-width: 900px)");
 
 function showView(name, updateHash = true) {
   views.forEach((view) => {
@@ -84,7 +85,15 @@ function showView(name, updateHash = true) {
 
 viewTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
-    showView(trigger.dataset.viewTarget);
+    if (mobileQuery.matches) {
+      showView(trigger.dataset.viewTarget);
+      return;
+    }
+
+    const target = trigger.dataset.viewTarget === "home"
+      ? document.querySelector("#top")
+      : document.querySelector(`#${trigger.dataset.viewTarget}`);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
@@ -145,4 +154,24 @@ const initialView = location.hash === "#routes"
   : location.hash === "#community"
     ? "community"
     : "home";
-showView(initialView, false);
+
+function syncLayout() {
+  if (mobileQuery.matches) {
+    const mobileView = location.hash === "#routes"
+      ? "routes"
+      : location.hash === "#community"
+        ? "community"
+        : "home";
+    showView(mobileView, false);
+    return;
+  }
+
+  views.forEach((view) => {
+    view.hidden = false;
+    view.classList.toggle("active", view.dataset.view === "home");
+  });
+  document.body.classList.remove("view-open");
+}
+
+syncLayout();
+mobileQuery.addEventListener("change", syncLayout);
