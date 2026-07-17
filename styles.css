@@ -193,6 +193,7 @@ img { max-width: 100%; }
 .home-view > .home-hero,
 .home-view > .recognition-band,
 .home-view > .output-section { display: none; }
+.mobile-booth-note { display: none; }
 .routes-view .subpage-head { display: none; }
 .eyebrow {
   margin: 0 0 18px;
@@ -615,6 +616,24 @@ h1, h2, h3, p { letter-spacing: 0; }
 .desktop-record-copy .button.primary { color: var(--ink); background: white; border-color: white; }
 .desktop-record-copy .button.secondary { color: white; border-color: white; }
 .desktop-record-copy .button.secondary:hover { color: var(--ink); background: white; }
+.desktop-booth-note {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.28);
+}
+.desktop-booth-note > strong { display: block; font-size: 18px; }
+.desktop-booth-note dl { margin: 18px 0 0; }
+.desktop-booth-note dl div {
+  min-height: 34px;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  color: #e4e7ff;
+  font-size: 14px;
+}
+.desktop-booth-note dt { color: #aeb7ff; }
+.desktop-booth-note dd { margin: 0; }
+.desktop-booth-note a { text-decoration: underline; text-underline-offset: 4px; }
 .desktop-record-demo {
   min-height: 680px;
   display: grid;
@@ -719,6 +738,25 @@ footer > p { max-width: 760px; margin: 26px 0; color: var(--muted); line-height:
   .button { width: 100%; }
   .home-points { margin-top: 28px; gap: 6px; }
   .home-points span { flex: 1; min-width: 100px; text-align: center; padding: 8px 5px; font-size: 11px; }
+  .mobile-booth-note {
+    margin: 0 20px 72px;
+    padding: 18px;
+    display: block;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .mobile-booth-note > strong { display: block; font-size: 15px; line-height: 1.5; }
+  .mobile-booth-note dl { margin: 14px 0 0; }
+  .mobile-booth-note dl div {
+    min-height: 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    font-size: 12px;
+  }
+  .mobile-booth-note dt { color: var(--muted); }
+  .mobile-booth-note dd { margin: 0; font-weight: 700; }
+  .mobile-booth-note a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
   .home-demo { height: 500px; min-height: 0; }
   .raw-shot { width: 75%; height: 68%; }
   .report-shot { width: 45%; height: 76%; }
